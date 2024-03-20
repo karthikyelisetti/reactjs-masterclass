@@ -22,9 +22,9 @@ function App() {
     <div className="App">
       <div className="box">
         <p>{count}</p>
-        <button onClick={handleAdd} className='success'>ADD</button>
-        <button onClick={handleSub} className='alert'>SUB</button>
-        <button onClick={handleReset} className='warning'>RESET</button>
+        <button onClick={handleAdd} className='add'>ADD</button>
+        <button onClick={handleSub} className='sub'>SUB</button>
+        <button onClick={handleReset} className='reset'>RESET</button>
       </div>
     </div>
   );
