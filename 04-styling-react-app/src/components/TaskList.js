@@ -11,13 +11,20 @@ export const TaskList = () => {
   ]);
   const [show, setShow] = useState();
 
+  const styles = {
+    color: "#be3434",
+    border: "1px solid #be3434",
+    borderRadius: "5px",
+    padding: "20px",
+  };
+
   function handleDelete(id) {
     setTasks(tasks.filter((task) => task.id !== id));
   }
 
   return (
     <section className="tasklist">
-      <h1>Tasks List</h1>
+      <h1 style={styles}>Tasks List</h1>
       <ul>
         <button className="trigger" onClick={() => setShow(!show)}>
           Toggle
