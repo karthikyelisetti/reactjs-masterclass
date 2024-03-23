@@ -1,8 +1,9 @@
 import React from "react";
+import "./TaskCard.css";
 
 export const TaskCard = ({ task, handleDelete }) => {
   return (
-    <>
+    <div className="taskcard">
       <li className={task.completed ? "completed" : "incomplete"}>
         <span>
           {task.id}-{task.name}
@@ -11,6 +12,6 @@ export const TaskCard = ({ task, handleDelete }) => {
           Delete
         </button>
       </li>
-    </>
+    </div>
   );
 };
