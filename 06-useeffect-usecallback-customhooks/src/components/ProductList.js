@@ -4,7 +4,9 @@ import { useFetch } from "../hooks/useFetch";
 
 export const ProductList = () => {
   const [url, setUrl] = useState(["http://localhost:8000/products"]);
-  const { data: products } = useFetch(url);
+  
+  // using custom hook - useFetch
+  const { data: products, loading } = useFetch(url);
 
   //useCallback() is needed only when the function is outside the useEffect()
   // const fetchProducts = useCallback(async () => {
@@ -24,6 +26,9 @@ export const ProductList = () => {
         <button onClick={() => setUrl("http://localhost:8000/products")}>All</button>
         <button onClick={() => setUrl("http://localhost:8000/products?in_stock=true")}>In Stock Only</button>
       </div>
+
+      {/* Using the loading feature */}
+      {loading && <p>loading products...</p>}
       
       {products && products.map((product) => (
         <div className="card" key={product.id}>
