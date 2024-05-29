@@ -16,6 +16,11 @@ function App() {
     <div className="App">
       <Header />
       <main>
+        {/* "Routes" is kind of package where we have multiple "Route" within the Routes
+             "Route" is use to connect with different pages within a web application             
+             the Navigate component redirects the user to posts section on getting rendered.
+             This happend IF the user is logged in (user object is present).
+        */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="products" element={<ProductList />} />
