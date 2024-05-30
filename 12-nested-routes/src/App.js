@@ -9,6 +9,9 @@ import { ProductDetail } from "./components/ProductDetail";
 import { Navigate } from "react-router-dom";
 import { Admin } from "./components/Admin";
 import { PageNotFound } from "./components/PageNotFound";
+import { ContactIN } from "./components/ContactIN";
+import { ContactUS } from "./components/ContactUS";
+import { ContactEU } from "./components/ContactEU";
 
 function App() {
   const user = true;
@@ -26,11 +29,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="products" element={<ProductList />} />
           <Route path="products/:id" element={<ProductDetail />} />
-          <Route path="contact" element={<Contact />} />
-          <Route
-            path="admin"
-            element={user ? <Admin /> : <Navigate to="/" />}
-          />
+          <Route path="contact" element={<Contact />}>
+            <Route path="in" element={<ContactIN />} />
+            <Route path="us" element={<ContactUS />} />
+            <Route path="eu" element={<ContactEU />} />
+          </Route>
+          <Route path="admin" element={user ? <Admin /> : <Navigate to="/" />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>
