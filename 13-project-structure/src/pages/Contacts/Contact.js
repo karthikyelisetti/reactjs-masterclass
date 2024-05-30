@@ -11,11 +11,11 @@ export const Contact = () => {
   }
 
   return (
-    <>
+    <main>
       <div className="component">Contact</div>
       {/* Outlet is used to connect between nested routes */}
       <Outlet />
       <button onClick={handleNavigate}>Back to Home</button>
-    </>
+    </main>
   );
 };

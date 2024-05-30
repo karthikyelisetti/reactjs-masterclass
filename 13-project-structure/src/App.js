@@ -1,17 +1,7 @@
-import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-import { Home } from "./components/Home";
-import { Contact } from "./components/Contact";
-import { ProductList } from "./components/ProductList";
-import { ProductDetail } from "./components/ProductDetail";
-import { Navigate } from "react-router-dom";
-import { Admin } from "./components/Admin";
-import { PageNotFound } from "./components/PageNotFound";
-import { ContactIN } from "./components/ContactIN";
-import { ContactUS } from "./components/ContactUS";
-import { ContactEU } from "./components/ContactEU";
+import { Header, Footer } from "./components/index";
+import { AllRoutes } from "./routes/AllRoutes";
+
 
 function App() {
   const user = true;
@@ -19,25 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <main>
-        {/* "Routes" is kind of package where we have multiple "Route" within the Routes
-            "Route" is use to connect with different pages within a web application.            
-             The Navigate component redirects the user to posts section on getting rendered.
-             This happend IF the user is logged in (user object is present).
-        */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="products" element={<ProductList />} />
-          <Route path="products/:id" element={<ProductDetail />} />
-          <Route path="contact" element={<Contact />}>
-            <Route path="in" element={<ContactIN />} />
-            <Route path="us" element={<ContactUS />} />
-            <Route path="eu" element={<ContactEU />} />
-          </Route>
-          <Route path="admin" element={user ? <Admin /> : <Navigate to="/" />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </main>
+      <AllRoutes />
       <Footer />
     </div>
   );

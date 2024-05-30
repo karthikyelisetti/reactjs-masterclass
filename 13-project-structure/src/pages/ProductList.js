@@ -14,9 +14,9 @@ export const ProductList = () => {
   }
 
   return (
-    <>
+    <main>
       <div className="component">ProductList</div>
       <button onClick={handleNavigation}>Back to Home</button>
-    </>
+    </main>
   );
 };

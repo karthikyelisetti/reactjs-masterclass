@@ -7,8 +7,8 @@ export const ProductDetail = () => {
   // console.log(params);
 
   return (
-    <>
+    <main>
       <div className="component">ProductDetail - {params.id}</div>
-    </>
+    </main>
   );
 };
